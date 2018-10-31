@@ -3,10 +3,23 @@ const router = express.Router();
 const uuid = require('uuid');
 const User = require('../models/user');
 
+// ユーザー一覧
 router.get('/', (req, res, next) => {
-  res.send('respond with a resource');
+  const title = 'ユーザー一覧';
+  res.render('users/list', {
+    title: title
+  });
 });
 
+router.get('/list', (req, res, next) => {
+  User.findAll({
+      order: [['"updatedAt"', 'ASC']]
+  }).then((users) => {
+    res.json(users);
+  });
+});
+
+// ユーザー登録
 router.get('/add', (req, res, next) => {
   const title = '新規ユーザー登録';
   res.render('users/add', {

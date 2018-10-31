@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  .container
+    h1= title
+    #app
+
+block template
+  template(id="user-list")
+    div
+      ul
+        li(v-for="user in users" v-bind:key="user.userId")
+          p {{user.nickname}}
+
+block scripts
+  script.
+    const app = new Vue({
+      el: '#app',
+      template: '#user-list',
+      data: {
+        users: []
+      },
+      mounted() {
+        fetch('/users/list')
+          .then(response => response.json())
+          .then((data) => {
+            this.users = data;
+          })
+      }
+    });
