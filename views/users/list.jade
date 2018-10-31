@@ -7,9 +7,9 @@ block content
 
 block template
   template(id="user-list")
-    div
-      ul
-        li(v-for="user in users" v-bind:key="user.userId")
+    .user-list.clearfix
+      section(v-for="user in users" v-bind:key="user.userId")
+        .circle
           p {{user.nickname}}
 
 block scripts

@@ -26,7 +26,7 @@ body {
   margin: 0;
 }
 .container {
-  padding: 1rem;
+  padding: 1rem 10%;
 }
 .clearfix::after{
   content: "";
@@ -95,4 +95,31 @@ textarea.comp-ui {
   box-sizing: border-box;
   border: solid 1px #ddd;
   border-radius: 3px;
+}
+/* user-list */
+.user-list {
+}
+.user-list section {
+  float: left;
+  margin-right: 10%;
+  width: 30%;
+}
+.user-list section:nth-of-type(3n) {
+  margin-right: 0;
+}
+.user-list section .circle {
+  position: relative;
+  padding: 50%;
+  border: solid 3rem #ddd;
+  border-radius: 50%;
+}
+.user-list section .circle p {
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7em;
+  height: 1em;
+  margin-top: -.5em;
+  margin-left: -3.5em;
 }
