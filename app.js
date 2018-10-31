@@ -5,6 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var helmet = require('helmet');
 
+var User = require('./models/user');
+User.sync();
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
