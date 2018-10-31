@@ -1,8 +1,98 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* reset */
+img {
+  vertical-align:bottom;
 }
-
+p {
+  margin: 0;
+}
+ul,dl,dd {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: inherit;
+}
+table {
+  border-spacing: 0;
+  width: 100%;
+}
+/* common */
+body {
+  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  padding: 1rem;
+}
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.fl-left {
+  float: left;
+}
+.fl-right {
+  float: right;
+}
+.responsive-img {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .pc-none {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .sp-none {
+    display: none !important;
+  }
+}
+/* comp-ui */
+.form-elem {
+  margin-bottom: 1rem;
+}
+label.comp-ui {
+  font-weight: bold;
+}
+select.comp-ui {
+  appearance: none;
+  border-radius: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: none transparent;
+  vertical-align: middle;
+  font-size: inherit;
+  color: inherit;
+  box-sizing: content-box;
+}
+a.comp-ui,
+button.comp-ui {
+  width: 100%;
+  padding: .5rem 0;
+  border: solid 1px #ddd;
+  border-radius: 3rem;
+  display: block;
+  text-align: center;
+}
+button.comp-ui {
+  background: none;
+  cursor: pointer;
+}
+input[type="text"].comp-ui,
+select.comp-ui,
+textarea.comp-ui {
+  display: block;
+  margin-top: .25rem;
+  width: 100%;
+  padding: .5em;
+  box-sizing: border-box;
+  border: solid 1px #ddd;
+  border-radius: 3px;
 }
