@@ -6,7 +6,14 @@ var logger = require('morgan');
 var helmet = require('helmet');
 
 var User = require('./models/user');
-User.sync();
+var Strength = require('./models/strength');
+User.sync().then(() => {
+  Strength.belongsTo(User, {foreignKey: 'userId'});
+  Strength.sync({
+    force: false,
+    alter:true
+  });
+});
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

@@ -89,12 +89,16 @@ input[type="text"].comp-ui,
 select.comp-ui,
 textarea.comp-ui {
   display: block;
-  margin-top: .25rem;
   width: 100%;
   padding: .5em;
   box-sizing: border-box;
   border: solid 1px #ddd;
   border-radius: 3px;
+}
+label>input[type="text"].comp-ui,
+label>select.comp-ui,
+label>textarea.comp-ui {
+  margin-top: .25rem;
 }
 /* user-list */
 .user-list {

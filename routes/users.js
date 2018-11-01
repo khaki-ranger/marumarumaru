@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const uuid = require('uuid');
 const User = require('../models/user');
+const Strength = require('../models/strength');
 
 // ユーザー一覧
 router.get('/', (req, res, next) => {
@@ -35,8 +36,15 @@ router.post('/add', (req, res, next) => {
     nickname: req.body.nickname,
     description: req.body.description
   };
-  User.create(params).then(() => {
-    res.redirect('/');
+  User.create(params).then((user) => {
+    const strengthNames = req.body.strength.trim().split(/,\s?/);
+    const strength = strengthNames.map((s) => { return {
+      strengthName: s.trim(),
+      userId: user.userId
+    };});
+    Strength.bulkCreate(strength).then(() => {
+      res.redirect('/');
+    });
   });;
 });
 
