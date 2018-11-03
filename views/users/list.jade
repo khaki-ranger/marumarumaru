@@ -10,7 +10,9 @@ block template
     .user-list.clearfix
       section(v-for="user in users" v-bind:key="user.userId")
         .circle
-          p {{user.nickname}}
+          .content
+            div
+              .nickname {{user.nickname}}
 
 block scripts
   script.

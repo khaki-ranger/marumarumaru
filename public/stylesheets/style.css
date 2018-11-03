@@ -26,7 +26,8 @@ body {
   margin: 0;
 }
 .container {
-  padding: 1rem 10%;
+  width: 738px;
+  margin: 0 auto;
 }
 .clearfix::after{
   content: "";
@@ -105,25 +106,25 @@ label>textarea.comp-ui {
 }
 .user-list section {
   float: left;
-  margin-right: 10%;
-  width: 30%;
+  margin-right: 15px;
+  margin-bottom: 15px;
 }
 .user-list section:nth-of-type(3n) {
   margin-right: 0;
 }
 .user-list section .circle {
-  position: relative;
-  padding: 50%;
-  border: solid 3rem #ddd;
+  width: 200px;
+  height: 200px;
+  border: solid 18px #ddd;
   border-radius: 50%;
 }
-.user-list section .circle p {
-  line-height: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 7em;
-  height: 1em;
-  margin-top: -.5em;
-  margin-left: -3.5em;
+.user-list section .circle .content {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.user-list section .circle .content>div {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
 }
