@@ -42,7 +42,13 @@ block scripts
       computed: {
         matched: function() {
           return this.users.filter(function (el) {
-            return el.nickname.indexOf(this.pattern) > -1
+            var strength = '';
+            if(el.strength.length > 0) {
+              for (var item of el.strength) {
+                strength += item.strengthName;
+              }
+            }
+            return el.nickname.indexOf(this.pattern) > -1 || strength.indexOf(this.pattern) > -1
           }, this)
         },
       }
