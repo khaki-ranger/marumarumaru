@@ -25,10 +25,6 @@ body {
   padding: 0;
   margin: 0;
 }
-.container {
-  width: 738px;
-  margin: 0 auto;
-}
 .clearfix::after{
   content: "";
   display: block;
@@ -103,20 +99,17 @@ label>textarea.comp-ui {
 }
 /* user-list */
 .user-list {
+  margin: 0 auto;
 }
 .user-list section {
   float: left;
   margin-right: 15px;
   margin-bottom: 15px;
 }
-.user-list section:nth-of-type(3n) {
-  margin-right: 0;
-}
 .user-list section .circle {
-  width: 200px;
-  height: 200px;
-  border: solid 18px #ddd;
   border-radius: 50%;
+  border-color: #ddd;
+  border-style: solid;
 }
 .user-list section .circle .content {
   display: table;
@@ -127,4 +120,69 @@ label>textarea.comp-ui {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
+}
+@media (max-width: 576px) {
+.user-list {
+  width: 344px;
+}
+.user-list section:nth-of-type(2n) {
+  margin-right: 0;
+}
+.user-list section .circle {
+  width: 139px;
+  height: 139px;
+  border-width: 12px;
+}
+}
+@media (min-width: 576px) and (max-width: 768px) {
+.user-list {
+  width: 546px;
+}
+.user-list section:nth-of-type(3n) {
+  margin-right: 0;
+}
+.user-list section .circle {
+  width: 136px;
+  height: 136px;
+  border-width: 18px;
+}
+}
+@media (min-width: 768px) and (max-width: 992px) {
+.user-list {
+  width: 738px;
+}
+.user-list section:nth-of-type(3n) {
+  margin-right: 0;
+}
+.user-list section .circle {
+  width: 182px;
+  height: 182px;
+  border-width: 24px;
+}
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+.user-list {
+  width: 962px;
+}
+.user-list section:nth-of-type(4n) {
+  margin-right: 0;
+}
+.user-list section .circle {
+  width: 181px;
+  height: 181px;
+  border-width: 24px;
+}
+}
+@media (min-width: 1200px) {
+.user-list {
+  width: 1170px;
+}
+.user-list section:nth-of-type(5n) {
+  margin-right: 0;
+}
+.user-list section .circle {
+  width: 178px;
+  height: 178px;
+  border-width: 22px;
+}
 }
