@@ -16,7 +16,27 @@ router.get('/list', (req, res, next) => {
   User.findAll({
       order: [['"updatedAt"', 'ASC']]
   }).then((users) => {
-    res.json(users);
+    Strength.findAll({}).then((strength) => {
+      const response = [];
+      users.forEach((u) => {
+        const user = {
+          userId: u.userId,
+          nickname: u.nickname,
+          strength: []
+        };
+        strength.forEach((s) => {
+          if (u.userId === s.userId) {
+            const strength = {
+              strengthId: s.strengthId,
+              strengthName: s.strengthName
+            };
+            user.strength.push(strength);
+          }
+        });
+        response.push(user);
+      });
+      res.json(response);
+    });
   });
 });
 

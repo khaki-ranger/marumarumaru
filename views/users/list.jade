@@ -13,6 +13,9 @@ block template
           .holder
             .contents
               h1.nickname {{user.nickname}}
+              .strength
+                div(v-for="item in user.strength" v-bind:key="user.strength.strengthId")
+                  p.strengthName {{item.strengthName}}
 
 block scripts
   script.
