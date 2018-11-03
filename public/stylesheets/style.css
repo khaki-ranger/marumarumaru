@@ -24,6 +24,7 @@ body {
   font-size: 14px;
   padding: 0;
   margin: 0;
+  background-color: #4FC3F7;
 }
 .clearfix::after{
   content: "";
@@ -108,18 +109,22 @@ label>textarea.comp-ui {
 }
 .user-list section .circle {
   border-radius: 50%;
-  border-color: #ddd;
+  border-color: white;
   border-style: solid;
+  color: white;
 }
-.user-list section .circle .content {
+.user-list section .circle .holder {
   display: table;
   width: 100%;
   height: 100%;
 }
-.user-list section .circle .content>div {
+.user-list section .circle .holder .contents {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
+}
+.user-list section .circle .holder .contents .nickname {
+  font-size: 1rem;
 }
 @media (max-width: 576px) {
 .user-list {
@@ -129,9 +134,9 @@ label>textarea.comp-ui {
   margin-right: 0;
 }
 .user-list section .circle {
-  width: 139px;
-  height: 139px;
-  border-width: 12px;
+  width: 144px;
+  height: 144px;
+  border-width: 10px;
 }
 }
 @media (min-width: 576px) and (max-width: 768px) {
@@ -142,9 +147,9 @@ label>textarea.comp-ui {
   margin-right: 0;
 }
 .user-list section .circle {
-  width: 136px;
-  height: 136px;
-  border-width: 18px;
+  width: 152px;
+  height: 152px;
+  border-width: 10px;
 }
 }
 @media (min-width: 768px) and (max-width: 992px) {
@@ -155,9 +160,9 @@ label>textarea.comp-ui {
   margin-right: 0;
 }
 .user-list section .circle {
-  width: 182px;
-  height: 182px;
-  border-width: 24px;
+  width: 212px;
+  height: 212px;
+  border-width: 12px;
 }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -168,9 +173,9 @@ label>textarea.comp-ui {
   margin-right: 0;
 }
 .user-list section .circle {
-  width: 181px;
-  height: 181px;
-  border-width: 24px;
+  width: 205px;
+  height: 205px;
+  border-width: 12px;
 }
 }
 @media (min-width: 1200px) {
@@ -181,8 +186,8 @@ label>textarea.comp-ui {
   margin-right: 0;
 }
 .user-list section .circle {
-  width: 178px;
-  height: 178px;
-  border-width: 22px;
+  width: 198px;
+  height: 198px;
+  border-width: 12px;
 }
 }
