@@ -70,18 +70,20 @@ select.comp-ui {
   color: inherit;
   box-sizing: content-box;
 }
+button.comp-ui {
+  background: none;
+  border:none;
+  cursor: pointer;
+}
 a.comp-ui,
 button.comp-ui {
   width: 100%;
   padding: .5rem 0;
-  border: solid 1px #ddd;
+  border-bottom: solid 1px #bbb;
   border-radius: 3rem;
   display: block;
   text-align: center;
-}
-button.comp-ui {
-  background: none;
-  cursor: pointer;
+  background-color: #FDD835;
 }
 input[type="text"].comp-ui,
 select.comp-ui,
@@ -98,10 +100,16 @@ label>select.comp-ui,
 label>textarea.comp-ui {
   margin-top: .25rem;
 }
+input[type="text"]::placeholder {
+  color: #ccc;
+}
 /* user-list */
 .container,
 .user-list {
   margin: 0 auto;
+}
+.user-list {
+  padding-top: 62px;
 }
 .user-list section {
   float: left;
@@ -229,4 +237,13 @@ label>textarea.comp-ui {
 .user-list section .circle .holder .contents .nickname {
   padding-top: 48px;
 }
+}
+/* search-component */
+.search-component {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #4FC3F7;
 }

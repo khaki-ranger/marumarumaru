@@ -5,14 +5,18 @@ block content
 
 block template
   template(id="user-list")
-    .user-list.clearfix
-      section(v-for="user in users" v-bind:key="user.userId")
-        .circle
-          .holder
-            .contents
-              h1.nickname {{user.nickname}}
-              .strength
-                p.strength-name(v-for="item in user.strength" v-bind:key="user.strength.strengthId") {{item.strengthName}}
+    div
+      .search-component
+        .container
+          input.comp-ui.search(type="text", placeholder="search...", v-bind:value="pattern", v-on:input="handleInput")
+      .user-list.clearfix
+        section(v-for="user in matched" v-bind:key="user.userId")
+          .circle
+            .holder
+              .contents
+                h1.nickname {{user.nickname}}
+                .strength
+                  p.strength-name(v-for="item in user.strength" v-bind:key="user.strength.strengthId") {{item.strengthName}}
 
 block scripts
   script.
@@ -20,6 +24,7 @@ block scripts
       el: '#app',
       template: '#user-list',
       data: {
+        pattern: '',
         users: []
       },
       mounted() {
@@ -28,5 +33,17 @@ block scripts
           .then((data) => {
             this.users = data;
           })
+      },
+      methods: {
+        handleInput: function(event) {
+          this.pattern = event.target.value
+        }
+      },
+      computed: {
+        matched: function() {
+          return this.users.filter(function (el) {
+            return el.nickname.indexOf(this.pattern) > -1
+          }, this)
+        },
       }
     });

@@ -53,7 +53,7 @@ router.post('/add', (req, res, next) => {
     userId: uuid.v4(),
     username: req.body.username.slice(0, 255),
     email: req.body.email,
-    nickname: req.body.nickname,
+    nickname: req.body.nickname.trim(),
     description: req.body.description
   };
   User.create(params).then((user) => {
