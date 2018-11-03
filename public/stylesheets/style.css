@@ -99,6 +99,7 @@ label>textarea.comp-ui {
   margin-top: .25rem;
 }
 /* user-list */
+.container,
 .user-list {
   margin: 0 auto;
 }
@@ -137,6 +138,7 @@ label>textarea.comp-ui {
   margin-bottom: .25rem;
 }
 @media (max-width: 576px) {
+.container,
 .user-list {
   width: 344px;
 }
@@ -157,6 +159,7 @@ label>textarea.comp-ui {
 }
 }
 @media (min-width: 576px) and (max-width: 768px) {
+.container,
 .user-list {
   width: 546px;
 }
@@ -177,6 +180,7 @@ label>textarea.comp-ui {
 }
 }
 @media (min-width: 768px) and (max-width: 992px) {
+.container,
 .user-list {
   width: 738px;
 }
@@ -193,6 +197,7 @@ label>textarea.comp-ui {
 }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
+.container,
 .user-list {
   width: 962px;
 }
@@ -209,6 +214,7 @@ label>textarea.comp-ui {
 }
 }
 @media (min-width: 1200px) {
+.container,
 .user-list {
   width: 1170px;
 }
