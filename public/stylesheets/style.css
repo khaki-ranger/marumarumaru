@@ -125,6 +125,16 @@ label>textarea.comp-ui {
 }
 .user-list section .circle .holder .contents .nickname {
   font-size: 1rem;
+  margin: 0;
+  height: 50%;
+}
+.user-list section .circle .holder .contents .strength {
+  border-top: dotted 4px white;
+  padding-top: .5rem;
+  height: 50%;
+}
+.user-list section .circle .holder .contents .strength .strength-name {
+  margin-bottom: .25rem;
 }
 @media (max-width: 576px) {
 .user-list {
@@ -134,9 +144,16 @@ label>textarea.comp-ui {
   margin-right: 0;
 }
 .user-list section .circle {
-  width: 144px;
-  height: 144px;
-  border-width: 10px;
+  width: 148px;
+  height: 148px;
+  border-width: 8px;
+}
+.user-list section .circle .holder .contents .nickname {
+  font-size: .9rem;
+  padding-top: 34px;
+}
+.user-list section .circle .holder .contents .strength {
+  font-size: .8rem;
 }
 }
 @media (min-width: 576px) and (max-width: 768px) {
@@ -151,6 +168,13 @@ label>textarea.comp-ui {
   height: 152px;
   border-width: 10px;
 }
+.user-list section .circle .holder .contents .nickname {
+  font-size: .9rem;
+  padding-top: 34px;
+}
+.user-list section .circle .holder .contents .strength {
+  font-size: .8rem;
+}
 }
 @media (min-width: 768px) and (max-width: 992px) {
 .user-list {
@@ -163,6 +187,9 @@ label>textarea.comp-ui {
   width: 212px;
   height: 212px;
   border-width: 12px;
+}
+.user-list section .circle .holder .contents .nickname {
+  padding-top: 52px;
 }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -177,6 +204,9 @@ label>textarea.comp-ui {
   height: 205px;
   border-width: 12px;
 }
+.user-list section .circle .holder .contents .nickname {
+  padding-top: 50px;
+}
 }
 @media (min-width: 1200px) {
 .user-list {
@@ -189,5 +219,8 @@ label>textarea.comp-ui {
   width: 198px;
   height: 198px;
   border-width: 12px;
+}
+.user-list section .circle .holder .contents .nickname {
+  padding-top: 48px;
 }
 }

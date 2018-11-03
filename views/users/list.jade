@@ -14,8 +14,7 @@ block template
             .contents
               h1.nickname {{user.nickname}}
               .strength
-                div(v-for="item in user.strength" v-bind:key="user.strength.strengthId")
-                  p.strengthName {{item.strengthName}}
+                p.strength-name(v-for="item in user.strength" v-bind:key="user.strength.strengthId") {{item.strengthName}}
 
 block scripts
   script.
