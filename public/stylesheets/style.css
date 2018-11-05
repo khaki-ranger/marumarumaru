@@ -58,6 +58,17 @@ body {
 label.comp-ui {
   font-weight: bold;
 }
+label.comp-ui span {
+  color: #F4511E;
+  padding-left: .5rem;
+}
+p.comp-ui {
+  color: #F4511E;
+  padding-top: .5rem;
+}
+p.comp-ui i:before {
+  padding-right: .25rem;
+}
 select.comp-ui {
   appearance: none;
   border-radius: 0;
@@ -107,6 +118,9 @@ input[type="text"]::placeholder {
 .container,
 .user-list {
   margin: 0 auto;
+}
+.container {
+  padding-top: 15px;
 }
 .user-list {
   padding-top: 62px;

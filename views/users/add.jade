@@ -6,9 +6,11 @@ block content
       .form-spaces
         .form-elem
           label.comp-ui お名前
+            span 非表示
             input.comp-ui(type="text", name="username")
         .form-elem
           label.comp-ui メールアドレス
+            span 非表示
             input.comp-ui(type="text", name="email")
         .form-elem
           label.comp-ui ニックネーム
@@ -16,6 +18,8 @@ block content
         .form-elem
           label.comp-ui 得意技
             input.comp-ui(type="text", name="strength")
+          p.comp-ui
+            i.fas.fa-exclamation-circle 複数入力する場合は「,」で区切ってください
         .form-elem
           label.comp-ui 説明
             textarea.comp-ui(name="description", rows="10")
