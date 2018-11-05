@@ -55,6 +55,9 @@ body {
 .form-elem {
   margin-bottom: 1rem;
 }
+.form-elem:nth-of-type(1) {
+  margin-top: 1rem;
+}
 label.comp-ui {
   font-weight: bold;
 }
@@ -118,9 +121,6 @@ input[type="text"]::placeholder {
 .container,
 .user-list {
   margin: 0 auto;
-}
-.container {
-  padding-top: 15px;
 }
 .user-list {
   padding-top: 62px;

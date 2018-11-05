@@ -1,26 +1,69 @@
 extends ../layout
 
 block content
-  .container
-    form(method="post", action="/users/add")
-      .form-spaces
+  #app
+
+block template
+  template(id="user-add")
+    .container
+      form(@submit="checkForm", method="post", action="/users/add")
+        .form-elem(v-if="errors.length")
+          p Please correct the following error(s):
+          ul
+            li(v-for="error in errors") {{error}}
         .form-elem
           label.comp-ui お名前
             span 非表示
-            input.comp-ui(type="text", name="username")
+            input.comp-ui(type="text", name="username", v-model="username")
         .form-elem
           label.comp-ui メールアドレス
             span 非表示
-            input.comp-ui(type="text", name="email")
+            input.comp-ui(type="text", name="email", v-model="email")
         .form-elem
           label.comp-ui ニックネーム
-            input.comp-ui(type="text", name="nickname")
+            input.comp-ui(type="text", name="nickname", v-model="nickname")
         .form-elem
           label.comp-ui 得意技
-            input.comp-ui(type="text", name="strength")
+            input.comp-ui(type="text", name="strength", v-model="strength")
           p.comp-ui
             i.fas.fa-exclamation-circle 複数入力する場合は「,」で区切ってください
         .form-elem
           label.comp-ui 説明
-            textarea.comp-ui(name="description", rows="10")
+            textarea.comp-ui(name="description", v-model="description", rows="10")
         button.comp-ui(type="submit") 登録
+
+block scripts
+  script.
+    var app = new Vue({
+      el: '#app',
+      template: '#user-add',
+      data: {
+        errors: [],
+        username: undefined,
+        email: undefined,
+        nickname: undefined,
+        strenth: undefined,
+        description: undefined
+      },
+      methods: {
+        checkForm: function(e) {
+          if (this.username && this.email && this.nickname && this.strength) {
+            return true;
+          }
+          this.errors = [];
+          if (!this.username) {
+            this.errors.push('お名前を入力してください');
+          }
+          if (!this.email) {
+            this.errors.push('メールアドレスを入力してください');
+          }
+          if (!this.nickname) {
+            this.errors.push('ニックネームを入力してください');
+          }
+          if (!this.strength) {
+            this.errors.push('得意技を入力してください');
+          }
+          e.preventDefault();
+        }
+      }
+    });
