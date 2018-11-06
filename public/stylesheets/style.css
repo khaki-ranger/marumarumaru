@@ -261,3 +261,24 @@ input[type="text"]::placeholder {
   padding: 15px 0;
   background-color: #4FC3F7;
 }
+/* admin */
+.admin-list li {
+  display: table;
+  width: 100%;
+  background-color: white;
+  border-top: solid 1px #4FC3F7;
+}
+.admin-list li .username,
+.admin-list li .nickname,
+.admin-list li .action {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 1rem;
+}
+.admin-list li .username,
+.admin-list li .action {
+  width: 25%;
+}
+.admin-list li .action a {
+  width: 48%;
+}

@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  .container
+    - var hasUser = users.length > 0 
+    if hasUser
+      h3 ユーザー管理
+      ul.admin-list
+        each user in users
+          li(class="#{user.userId}") 
+            .username #{user.username}
+            .nickname #{user.nickname}
+            .action.clearfix
+              a.comp-ui.fl-left(href="/admin/users/update/#{user.userId}") 編集
+              a.comp-ui.fl-right(href="/admin/users/delete/#{user.userId}") 削除
