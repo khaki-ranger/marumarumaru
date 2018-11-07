@@ -1,0 +1,7 @@
+{
+  "name": "marumarumaru",
+  "description": "〇〇〇アプリ",
+  "logo": "",
+  "keywords": ["node"],
+  "image": "heroku/nodejs"
+}
