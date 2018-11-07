@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var helmet = require('helmet');
+var auth = require('./auth');
 
 var User = require('./models/user');
 var Strength = require('./models/strength');
@@ -21,6 +22,7 @@ var adminRouter = require('./routes/admin');
 
 var app = express();
 app.use(helmet());
+app.use(auth);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
