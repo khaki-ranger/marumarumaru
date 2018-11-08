@@ -48,7 +48,8 @@ block scripts
                 strength += item.strengthName;
               }
             }
-            return el.nickname.indexOf(this.pattern) > -1 || strength.indexOf(this.pattern) > -1
+            var pattern = new RegExp(this.pattern, 'i');
+            return pattern.test(el.nickname) || pattern.test(strength)
           }, this)
         },
       }
